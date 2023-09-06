@@ -1,13 +1,15 @@
 import nodemailer from 'nodemailer';
 
 export default {
+
+
         sendMail: async ({ userName, userEmail }) => {
                 try {
                         const transporter = nodemailer.createTransport({
                                 service: "gmail",
                                 auth: {
                                         user: "mayur.megharanjanads@gmail.com", // Your email address
-                                        pass: "tbus vosu dqzz minu", // Your email password
+                                        pass: `${process.env.SMTP_PASS}`, // Your email password
                                 },
                         });
 
